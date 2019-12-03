@@ -32,6 +32,14 @@ remi = User.create(name:"Remi", email:"remi@flat.com", password:"asdf1234")
 sara = User.create(name:"Sara", email:"sara@flat.com", password:"asdf1234")
 ryan = User.create(name:"Ryan", email:"ryan@flat.com", password:"asdf1234")
 
+ut1 = UserItem.create(user:young, item:car)
+ut2 = UserItem.create(user:young, item:lego)
+ut3 = UserItem.create(user:young, item:cookie)
+ut4 = UserItem.create(user:remi, item:ps5)
+ut5 = UserItem.create(user:jose, item:ssd)
+ut6 = UserItem.create(user:ryan, item:tv)
+ut7 = UserItem.create(user:jasur, item:adidas)
+ut8 = UserItem.create(user:sara, item:pants)
 
 #####items
 car = Item.create(name:"Car", price:10.34, category:toy)
@@ -71,4 +79,3 @@ short = Item.create(name:"Short", price:42.06 , category:clothing)
 jacket = Item.create(name:"Jacket", price:99.99 , category:clothing)
 jersey = Item.create(name:"Jersey", price:60.28 , category:clothing)
 hoodie = Item.create(name:"Hoodie", price:11.94 , category:clothing)
-
