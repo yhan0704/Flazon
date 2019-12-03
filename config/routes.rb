@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :items
   resources :categories
   resources :users
-  get '/', to: 'home#home', as: 'home'
+  get '/', to: 'users#index'
 end
