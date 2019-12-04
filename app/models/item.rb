@@ -4,4 +4,6 @@ class Item < ApplicationRecord
   has_many :ratings, dependent: :destroy
 
   belongs_to :category
+
+  validates :name, presence: true
 end
