@@ -24,13 +24,13 @@ clothing = Category.create(name:"Clothing")
 movie = Category.create(name:"Movie")
 
 ###User
-young = User.create(name:"Young", email:"young@flat.com", password:"asdf1234")
-jose = User.create(name:"Jose", email:"jose@flat.com", password:"asdf1234")
-will = User.create(name:"Will", email:"will@flat.com", password:"asdf1234")
-jasur = User.create(name:"Jasur", email:"jasur@flat.com", password:"asdf1234")
-remi = User.create(name:"Remi", email:"remi@flat.com", password:"asdf1234")
-sara = User.create(name:"Sara", email:"sara@flat.com", password:"asdf1234")
-ryan = User.create(name:"Ryan", email:"ryan@flat.com", password:"asdf1234")
+young = User.create(username:"Young", email:"young@flat.com", password_digest:"asdf1234")
+jose = User.create(username:"Jose", email:"jose@flat.com", password_digest:"asdf1234")
+will = User.create(username:"Will", email:"will@flat.com", password_digest:"asdf1234")
+jasur = User.create(username:"Jasur", email:"jasur@flat.com", password_digest:"asdf1234")
+remi = User.create(username:"Remi", email:"remi@flat.com", password_digest:"asdf1234")
+sara = User.create(username:"Sara", email:"sara@flat.com", password_digest:"asdf1234")
+ryan = User.create(username:"Ryan", email:"ryan@flat.com", password_digest:"asdf1234")
 
 #####items
 car = Item.create(name:"Car", price:10.34, category:toy)
