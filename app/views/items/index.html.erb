@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>..:: Welcome to Flazon ::..</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>FLAZON</li>
-          <li>HOME</li>
-          <li>ABOUT</li>
-          <li>CONTACT</li>
-          <li></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class=""> <!-- Main div  -->
+<%= render partial: 'header_form' %>
+<%= render partial: 'nav_form' %>
+<div class=""> <!-- Main div  -->
       <div class=""> <!-- Items div  -->
         <h1>Items</h1>
         <% @items.each do |item| %>
@@ -34,9 +17,19 @@
 
 
     </div> <!-- Main div closing  -->
+<%= render partial: 'footer_form' %>
 
-    <footer>
-      <p style="color:blue">Flazon.com © Inc. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
