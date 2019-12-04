@@ -1,3 +1,7 @@
+<% if @category.errors %>
+    <%= render partial: 'shared/error_message', locals: {new_object: @category} %>
+<% end %>
+
 <%= form_for @category do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br><br>

@@ -14,8 +14,12 @@ class CategoriesController < ApplicationController
     end
 
     def create
-        category = Category.create(category_params)
-        redirect_to category_path(category)
+        @category = Category.create(category_params)
+            if @category.valid?
+                redirect_to category_path(category)
+            else
+                render :new
+            end
     end
 
     def edit
@@ -23,7 +27,11 @@ class CategoriesController < ApplicationController
 
     def update
         @category.update(category_params)
-        redirect_to category_path(@category)
+            if @category.valid?
+                redirect_to category_path(@category)
+            else
+                render :edit
+            end
     end
 
     def destroy

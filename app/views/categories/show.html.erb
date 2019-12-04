@@ -4,9 +4,11 @@ Category Name: <%= @category.name %><br><br>
 
 Category's Items:<br><br>
 <% @category.items.each do |item| %>
-    <%= item.name %><br><br>
+    <%= link_to item.name, item_path(item) %><br>
+    Edit Delete<br><br>
 <% end %>
 
-Edit Delete
+
 <!--<%= link_to "Edit", edit_category_path(@category) %>
 <%= link_to "Delete", @category, method: :delete %>-->
+<%= link_to "New Item", new_item_path %>
