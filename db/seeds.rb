@@ -72,3 +72,6 @@ jacket = Item.create(name:"Jacket", price:99.99 , category:clothing)
 jersey = Item.create(name:"Jersey", price:60.28 , category:clothing)
 hoodie = Item.create(name:"Hoodie", price:11.94 , category:clothing)
 
+
+
+
