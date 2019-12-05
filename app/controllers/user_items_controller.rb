@@ -5,6 +5,10 @@ class UserItemsController < ApplicationController
     def show
     end
 
+    def create
+        
+    end
+
     def find_useritem
         @useritem = UserItem.find(params[:id])
     end

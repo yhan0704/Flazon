@@ -12,7 +12,7 @@
   <body>
 
   <% if session["username"] %>
-    <%= "Welcome!!!!! #{session["username"]}" %>
+    <%= "Welcome!!!!! #{session["username"]}, Your Cart has #{session["shopping_cart"]} item(s)" %>
     <%= link_to "Log out", logout_path, method: :delete %>
   <% else %>
     <%= link_to "Log in", login_path %>

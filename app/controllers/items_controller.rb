@@ -9,6 +9,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
   end
+  
+  def add
+    cart << params[:product]
+    render :index
+  end
 
   def create
     @item = Item.create(items_strong_params)
