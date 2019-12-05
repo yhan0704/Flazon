@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_item, only: [:show, :edit, :update, :add_to_cart, :destroy]
 
   def index
     @items = Item.all
@@ -31,6 +31,11 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def add_to_cart
+    current_cart << @item.id
+    redirect_to item_path(@item.id)
   end
 
   def destroy
