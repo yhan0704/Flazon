@@ -10,9 +10,11 @@ class SessionsController < ApplicationController
 
     def create
         username = params[:username]
+
         user = User.find_by(username: username)
         if user
             session["username"] = user.username
+            session[:username_id] = user.id
             redirect_to home_path
         else
             flash["error"] = "No user found with that name"

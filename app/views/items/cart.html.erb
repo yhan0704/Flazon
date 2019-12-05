@@ -1,5 +1,5 @@
-<br><br>
 <div>
+  <%= session[:username_id] %>
   <% session[:cart].each do |cart_id| %>
     <% item = Item.all.find(cart_id) %>
       <h2>Item Name: <%= item.name %></h2>
@@ -9,4 +9,7 @@
       <%= link_to "Edit" %>
       <%= link_to "Delete", delete_from_cart_path(item.id) %>
   <% end %>
+</div>
+<div class="">
+  <%= link_to "Buy", buy_path(session[:username_id]) %>
 </div>
