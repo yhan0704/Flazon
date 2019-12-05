@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_item, only: [:show, :edit, :update, :add_to_cart, :destroy, ]
   before_action :authorized, except: [:index]
-  
+
   def index
     @items = Item.all
   end
@@ -9,11 +9,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
   end
-  
-  def add
-    cart << params[:product]
-    render :index
-  end
+
 
   def create
     @item = Item.create(items_strong_params)
@@ -37,6 +33,11 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def add_to_cart
+    current_cart << @item.id
+    redirect_to item_path(@item.id)
   end
 
   def destroy

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: d2a091482ad6d96f0599c15fd149fc4fcd5dccc5
+  revision: d0b88ae15ae1596630a720e52b8047feba12650f
   branch: master
   specs:
     faker (2.8.0)
@@ -112,7 +112,7 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     public_suffix (4.0.1)
-    puma (4.3.0)
+    puma (4.3.1)
       nio4r (~> 2.0)
     rack (2.0.7)
     rack-proxy (0.6.5)

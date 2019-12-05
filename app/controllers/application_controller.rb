@@ -1,10 +1,9 @@
-class ApplicationController < ActionController::Base
+  class ApplicationController < ActionController::Base
+  helper_method :current_cart
 
-   helper_method :current_cart
-
-   def current_cart
-       
-   end
+  def current_cart
+    cart = session[:cart] ||= []
+  end
 
     def get_current_user
         @user = User.find_by(username: session[:username])
