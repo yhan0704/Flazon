@@ -11,7 +11,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(items_strong_params)
-    redirect_to item_path(@item)
+    if @item.valid?
+      redirect_to item_path(@item)
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,7 +26,11 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(items_strong_params)
-    redirect_to item_path(@item)
+    if @item.valid?
+      redirect_to item_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy
