@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorized, except: [:index]
+  
   def index
     @items = Item.all
   end
