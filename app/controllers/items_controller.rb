@@ -40,6 +40,10 @@ class ItemsController < ApplicationController
     redirect_to item_path(@item.id)
   end
 
+  def delete_from_cart
+    session[:cart].delete(params[:id].to_i)
+    redirect_to cart_path
+  end
   def destroy
     @item.destroy
     redirect_to items_path
