@@ -12,7 +12,9 @@
   <body>
 
   <% if session["username"] %>
-    <%= "Welcome #{session["username"]}, " %>
+    <%= "Welcome " %> <%= link_to "#{session["username"]}", user_path(session[:username_id]) %> 
+    <%=  %>
+
       <% if session[:cart] %>
         <%= "Your Cart has"%>  <%= link_to session[:cart].count, cart_path %><%= " item(s)."%>
       <% else %>
