@@ -1,5 +1,5 @@
+<br><br>
 <div>
-  <%= session[:username_id] %>
   <% session[:cart].each do |cart_id| %>
     <% item = Item.all.find(cart_id) %>
       <h2>Item Name: <%= item.name %></h2>

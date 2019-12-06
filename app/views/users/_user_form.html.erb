@@ -1,14 +1,18 @@
+
 <% if @user.errors %>
   <% @user.errors.full_messages.each do |error| %>
   <p style="color:red"><%= error %></p>
   <% end %>
 <% end %>
+
+
+
 <%= form_for @user do |u| %>
   <%= u.label :email %>
-  <%= u.text_field :email %>
+  <%= u.text_field :email %><br><br>
   <%= u.label :username %>
-  <%= u.text_field :username %>
+  <%= u.text_field :username %><br><br>
   <%= u.label :password %>
-  <%= u.password_field :password %>
+  <%= u.password_field :password %><br><br>
   <%= u.submit %>
 <% end %>

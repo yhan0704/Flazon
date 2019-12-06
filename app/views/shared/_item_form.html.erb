@@ -1,0 +1,14 @@
+<% if @item.errors %>
+  <% @item.errors.full_messages.each do |error| %>
+  <p style="color:red"><%= error %></p>
+  <% end %>
+<% end %>
+  <%= form_for @item do |i| %>
+    <%= i.label :name %>
+    <%= i.text_field :name %>
+    <%= i.label :price %>
+    <%= i.number_field :price, step: :any%>
+    <%= i.label :category_id%>
+    <%= i.collection_select(:category_id, Category.all, :id, :name, prompt:true) %>
+    <%= i.submit %>
+  <% end %>

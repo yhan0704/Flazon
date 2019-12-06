@@ -22,15 +22,11 @@
         <a class="nav-link" href="<%=categories_path%>">Categories</a>
       </li>
     </ul>
-   <!--     <div class = "search">
+    <div class = "search">
       <%= form_tag("search", method: :get) do %>
         <span class="form"><%= text_field_tag(:search, params[:search]) %></span>
         <%= submit_tag("Search")%>
         <% end %>
-    </div>-->
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+    </div>
+   
 </nav>

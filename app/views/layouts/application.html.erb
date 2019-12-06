@@ -15,11 +15,11 @@
     <%= "Welcome!!!!! #{session["username"]}, Your Cart has" %> 
       <% if session[:cart] %>
         <%= link_to session[:cart].count, cart_path %>
-      <% end %>
-
+      <% end %> item(s)
     <%= link_to "Log out", logout_path, method: :delete %>
   <% else %>
     <%= link_to "Log in", login_path %>
+    <%= link_to "Sign up", new_user_path %>
   <% end %>
 
 

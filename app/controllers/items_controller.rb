@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+
   def create
     @item = Item.create(items_strong_params)
     if @item.valid?
