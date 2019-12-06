@@ -1,12 +1,32 @@
 <%= render partial: 'shared/header_form'%>
 <%= render partial: 'shared/nav_form' %>
 <h1>Category Name: <%= @category.name %></h1>
-<h2>Category's Items:</h2>
-<% @category.items.each do |item| %>
-    <%= link_to item.name, item_path(item) %><br>
-    Edit Delete<br><br>
-<% end %>
 <%= link_to "Edit", edit_category_path(@category) %>
 <%= link_to "Delete", @category, method: :delete %>
-<%= link_to "New Item", new_item_path %>
+<%= link_to "Create New Item", new_item_path %>
+<h2>Items in this category</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Code #</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @category.items.each do |item| %>
+      <tr>
+        <th scope="row"><%= item.id %></th>
+        <td><%= link_to item.name, item_path(item) %></td>
+        <td><%= link_to @category.name, category_path(@category) %></td>
+        <td><%= link_to "Add to Cart", add_to_cart_path(item) %></td>
+        <td>link to edit </td>
+        <td>link to delete </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= render partial: 'shared/footer_form'%>

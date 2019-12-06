@@ -3,7 +3,11 @@ class ItemsController < ApplicationController
   before_action :authorized, except: [:index]
 
   def index
-    @items = Item.all
+    if params[:search]
+      @items = Item.search(params[:search]).order("created_at DESC")
+    else
+      @items = Item.all.order("created_at DESC")
+    end
   end
 
   def new
@@ -55,6 +59,6 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
     end
     def items_strong_params
-      params.require(:item).permit(:name, :price, :category_id)
+      params.require(:item).permit(:name, :price, :category_id, :search)
     end
 end
