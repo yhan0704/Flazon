@@ -1,5 +1,6 @@
+<%= render partial: 'shared/header_form'%>
+<%= render partial: 'shared/nav_form' %>
 <h1>Log in</h1>
-
 <% if flash["error"] %>
     <div class="error"><%= flash["error"] %></div>
 <% end %>
@@ -10,5 +11,5 @@
     <%= submit_tag "Login" %>
 <% end %>
 
-
 <p><%= link_to "Go to main page", home_path %></p>
+<%= render partial: 'shared/footer_form'%>

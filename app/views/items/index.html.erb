@@ -1,35 +1,27 @@
-<%= render partial: 'header_form' %>
-<%= render partial: 'nav_form' %>
-<div class=""> <!-- Main div  -->
-      <div class=""> <!-- Items div  -->
-        <h1>Items</h1>
-        <% @items.each do |item| %>
-        <ul>
-          <li><%= link_to item.name, item_path(item)  %></li>
-        </ul>
-        <% end %>
-      </div> <!-- Items div closing  -->
-
-      <div class=""> <!-- Action Buttons div  -->
-        <%= link_to "Create New Item", new_item_path %>
-      </div> <!-- Action Buttons div closing -->
-
-
-
-    </div> <!-- Main div closing  -->
-<%= render partial: 'footer_form' %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<%= render partial: 'shared/header_form' %>
+<%= render partial: 'shared/nav_form' %>
+  <h1>Items</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Code #</th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <% count_to_show_in_th_row = 1 %>
+      <tr>
+        <th scope="row"><%= item.id %></th>
+        <td><%= link_to item.name, item_path(item)  %></td>
+        <td><%= link_to "Add to Cart", add_to_cart_path(item) %></td>
+        <td>link to edit </td>
+      </tr>
+      <% count_to_show_in_th_row = 1 + 1 %>
+      <% end %>
+    </tbody>
+  </table>
+<%= link_to "Create New Item", new_item_path %>
+<%= render partial: 'shared/footer_form' %>

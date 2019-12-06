@@ -1,14 +1,12 @@
-<h1>####details###</h1>
-
-Category Name: <%= @category.name %><br><br>
-
-Category's Items:<br><br>
+<%= render partial: 'shared/header_form'%>
+<%= render partial: 'shared/nav_form' %>
+<h1>Category Name: <%= @category.name %></h1>
+<h2>Category's Items:</h2>
 <% @category.items.each do |item| %>
     <%= link_to item.name, item_path(item) %><br>
     Edit Delete<br><br>
 <% end %>
-
-
-<!--<%= link_to "Edit", edit_category_path(@category) %>
-<%= link_to "Delete", @category, method: :delete %>-->
+<%= link_to "Edit", edit_category_path(@category) %>
+<%= link_to "Delete", @category, method: :delete %>
 <%= link_to "New Item", new_item_path %>
+<%= render partial: 'shared/footer_form'%>

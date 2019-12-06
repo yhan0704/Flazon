@@ -1,3 +1,5 @@
+<%= render partial: 'shared/header_form' %>
+<%= render partial: 'shared/nav_form' %>
 <h1>Item Details</h1>
 <h2>Item Name: <%= @item.name %></h2>
 <h2>Price: <%= number_to_currency(@item.price) %> </h2>
@@ -7,3 +9,4 @@
   <%= link_to "Delete Item", item_path(@item), method: :delete %>
   <%= link_to "Add to Cart", add_to_cart_path(@item) %>
 </div>
+<%= render partial: 'shared/footer_form' %>

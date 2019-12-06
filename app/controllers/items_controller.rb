@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 
   def add_to_cart
     current_cart << @item.id
-    redirect_to item_path(@item.id)
+    redirect_to items_path
   end
 
   def delete_from_cart

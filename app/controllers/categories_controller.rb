@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-    
+
     before_action :find_category, only: [:show, :edit, :update, :destroy]
     before_action :authorized, except: [:index]
 
@@ -8,44 +8,43 @@ class CategoriesController < ApplicationController
     end
 
     def show
-    end 
-    
+    end
+
     def new
         @category = Category.new
     end
 
     def create
-        @category = Category.create(category_params)
-            if @category.valid?
-                redirect_to category_path(category)
-            else
-                render :new
-            end
+      @category = Category.create(category_params)
+      if @category.valid?
+        redirect_to category_path(@category)
+      else
+        render :new
+      end
     end
 
     def edit
     end
 
     def update
-        @category.update(category_params)
-            if @category.valid?
-                redirect_to category_path(@category)
-            else
-                render :edit
-            end
+    @category.update(category_params)
+    if @category.valid?
+      redirect_to category_path(@category)
+    else
+      render :edit
+    end
     end
 
     def destroy
-        @category.destroy
-        redirect_to categories_path
+      @category.destroy
+      redirect_to categories_path
     end
 
     def find_category
-        @category = Category.find(params[:id])
+      @category = Category.find(params[:id])
     end
 
     def category_params
-        params.require(:category).permit(:name)
+      params.require(:category).permit(:name)
     end
-
 end
