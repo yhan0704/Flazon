@@ -1,5 +1,6 @@
 <%= render partial: 'shared/header_form' %>
 <%= render partial: 'shared/nav_form'%>
+<% if session[:cart] %>
   <h1>Cart</h1>
   <table class="table">
     <thead>
@@ -12,7 +13,6 @@
         <th scope="col"></th>
       </tr>
     </thead>
-    <% if session[:cart] %>
         <tbody>
           <% session[:cart].each do |cart_id| %>
             <tr>
@@ -28,7 +28,7 @@
         </tbody>
       </table>
       <%= link_to "Buy", buy_path(session[:username_id]), class: "btn btn-primary btn-block btn-lg my-5" %>
-    <% else %>
-      <h1>Your cart is empty.</h1>
-    <% end %>
+<% else %>
+  <h1>Your cart is empty.</h1>
+<% end %>
 <%= render partial: 'shared/footer_form' %>
