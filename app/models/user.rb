@@ -8,4 +8,9 @@ class User < ApplicationRecord
     validates :password, presence: true
 
     has_secure_password
+
+    def self.search(search)
+        where("name LIKE ?", "%#{search}%")
+    end
+
 end

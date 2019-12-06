@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get "/add_to_cart/:id", to: "items#add_to_cart", as: 'add_to_cart'
   get "/delete_from_cart/:id", to:"items#delete_from_cart", as: 'delete_from_cart'
   get "/buy/:id", to: "user_items#create", as: "buy"
+
+  get "/search", to: "users#search"
 end

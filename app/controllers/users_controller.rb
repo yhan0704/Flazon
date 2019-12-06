@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:edit, :update, :show]
   # before_action :authorized, except: [:index, :about, :contact]
-  def index
-
-  end
+def index
+end
 
   def new
     @user = User.new
