@@ -28,7 +28,10 @@
   </tbody>
 </table>
     <div>
-      <%= link_to "Buy", buy_path(session[:username_id]) %>
+      <%= link_to "Buy", buy_path(session[:username_id]), class: "btn btn-primary btn-block btn-lg my-5" %>
+    </div>
+    <div class="">
+
     </div>
   <% else %>
     <h1>Your cart is empty.</h1>
