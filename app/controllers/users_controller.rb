@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:edit, :update, :show]
-  before_action :authorized, except: [:index, :about, :contact]
+  # before_action :authorized, except: [:index, :about, :contact]
   def index
 
   end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_strong_params)
     if @user.valid?
-      redirect_to user_path(@user)
+      redirect_to home_path
     else
       render :new
     end
