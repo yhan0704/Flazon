@@ -8,4 +8,10 @@ class Item < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true
   validates :category_id, presence: true
+ 
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
+  
+
 end
