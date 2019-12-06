@@ -1,18 +1,34 @@
 <%= render partial: 'shared/header_form' %>
 <%= render partial: 'shared/nav_form'%>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Code #</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
   <% if session[:cart] %>
+  <tbody>
     <% session[:cart].each do |cart_id| %>
-      <% item = Item.all.find(cart_id) %>
-        <h2>Item Name: <%= item.name %></h2>
-        <h2>Price: <%= number_to_currency(item.price) %> </h2>
-        <span> On category: <%= link_to item.category.name, category_path(item.category) %> </span>
-        <br><br>
-        <%= link_to "Edit" %>
-        <%= link_to "Delete", delete_from_cart_path(item.id) %>
-        <div class="">
-          <%= link_to "Buy", buy_path(session[:username_id]) %>
-        </div>
+      <tr>
+        <% item = Item.all.find(cart_id) %>
+        <th scope="row"><%= item.id %></th>
+        <th scope="row"><%= item.name %></th>
+        <th scope="row"><%= number_to_currency(item.price) %></th>
+        <th scope="row"><%= link_to item.category.name, category_path(item.category) %></th>
+        <th><%= link_to "Edit" %></th>
+        <th><%= link_to "Delete", delete_from_cart_path(item.id) %></th>
+      </tr>
     <% end %>
+  </tbody>
+</table>
+    <div>
+      <%= link_to "Buy", buy_path(session[:username_id]) %>
+    </div>
   <% else %>
     <h1>Your cart is empty.</h1>
   <% end %>
