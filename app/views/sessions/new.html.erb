@@ -4,7 +4,6 @@
 <% if flash["error"] %>
     <div class="error"><%= flash["error"] %></div>
 <% end %>
-
 <%= form_tag "/login" do %>
   <%= label :username, "Username" %>
   <%= text_field_tag :username %>
@@ -12,6 +11,4 @@
   <%= password_field_tag :password %>
   <%= submit_tag "Login" %>
 <% end %>
-
-<p><%= link_to "Go to main page", home_path %></p>
 <%= render partial: 'shared/footer_form'%>
