@@ -12,18 +12,17 @@
   <body>
 
   <% if session["username"] %>
-    <%= "Welcome #{session["username"]}, Your Cart has" %>
+    <%= "Welcome #{session["username"]}, " %>
       <% if session[:cart] %>
-        <%= link_to session[:cart].count, cart_path %><%= " item(s)."%>
-
+        <%= "Your Cart has"%>  <%= link_to session[:cart].count, cart_path %><%= " item(s)."%>
+      <% else %>
+        <%= "Your Cart has 0 item(s)."%>
       <% end %>
-
     <%= link_to "Log out", logout_path, method: :delete %>
   <% else %>
     <%= link_to "Log In", login_path %>
     <%= link_to "Sign Up", new_user_path %>
   <% end %>
-
 
     <%= yield %>
   </body>
