@@ -40,7 +40,9 @@ class ItemsController < ApplicationController
   end
 
   def delete_from_cart
-    session[:cart].delete(params[:id].to_i)
+    # session[:cart].delete(params[:id].to_i)
+    index_to_delete = session[:cart].index(params[:id].to_i)
+    session[:cart].delete_at(index_to_delete)
     redirect_to cart_path
   end
   def destroy
