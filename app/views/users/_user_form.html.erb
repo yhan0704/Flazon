@@ -3,12 +3,3 @@
   <p style="color:red"><%= error %></p>
   <% end %>
 <% end %>
-<%= form_for @user do |u| %>
-  <%= u.label :email %>
-  <%= u.text_field :email %>
-  <%= u.label :username %>
-  <%= u.text_field :username %>
-  <%= u.label :password %>
-  <%= u.password_field :password %>
-  <%= u.submit %>
-<% end %>
