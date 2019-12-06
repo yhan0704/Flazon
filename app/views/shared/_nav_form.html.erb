@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="<%=home_path%>">Flazon</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= home_path %>">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= about_path %>">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=contact_path%>">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=items_path%>">Items</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="<%=categories_path%>">Categories</a>
+      </li>      
+    </ul>
+   <!--     <div class = "search">
+      <%= form_tag("search", method: :get) do %>
+        <span class="form"><%= text_field_tag(:search, params[:search]) %></span>
+        <%= submit_tag("Search")%>
+        <% end %>
+    </div>-->
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
