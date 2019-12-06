@@ -1,10 +1,27 @@
 <%= render partial: 'shared/header_form'%>
 <%= render partial: 'shared/nav_form' %>
 <h1>Our Store Categories</h1>
-<% @categories.each do |category| %>
-  <ul>
-      <li><%= link_to category.name, category_path(category) %> (Count Item(s)): <%= category.items.count %> Edit Delete</li>
-  </ul>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Code #</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <th scope="row"><%= category.id %></th>
+        <td><%= link_to category.name, category_path(category) %></td>
+        <td><%= category.items.count %></td>
+        <td>link to edit </td>
+        <td>link to delete </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>    
 <%= link_to "New Category", new_category_path %>
 <%= render partial: 'shared/footer_form' %>

@@ -20,11 +20,11 @@
       </li>
        <li class="nav-item">
         <a class="nav-link" href="<%=categories_path%>">Categories</a>
-      </li>      
+      </li>
     </ul>
       <%= form_tag(items_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
       <%= submit_tag "Search" %>
     <% end %>
-   
+
 </nav>
