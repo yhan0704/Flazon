@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 857c7846038818efaf46bf68421be3864a976403
+  revision: 16cf902b8b25ef0340aef57f49bd48465970af77
   branch: master
   specs:
-    faker (2.8.0)
+    faker (2.8.1)
       i18n (>= 1.6, < 1.8)
 
 GEM
@@ -118,6 +118,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
+    pg (0.21.0)
     popper_js (1.14.5)
     public_suffix (4.0.1)
     puma (4.3.1)
@@ -184,7 +185,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.1)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -225,13 +225,13 @@ DEPENDENCIES
   faker!
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
+  pg (~> 0.18)
   puma (~> 4.1)
   rails (~> 6.0.1)
   sass-rails (>= 6)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
